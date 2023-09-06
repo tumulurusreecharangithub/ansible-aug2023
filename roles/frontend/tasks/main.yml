@@ -1,11 +1,7 @@
-#- name: Import Role
-#  ansible.builtin.import_role:
-#    name:common
-  
 - name: Install Ngnix
   ansible.builtin.yum:
     name: nginx
-    state:installed
+    state: installed
   
 - name: remove html content
   ansible.builtin.file:  
@@ -20,14 +16,14 @@
  
 - name: copy frontend content
   ansible.builtin.copy:
-    src: /tmp/frontend-main/static
+    src: /tmp/frontend-main/static/
     dest: /usr/share/ngnix/html
     remote_src: yes
  
-#- name: copy robos#hop config file
-#  ansible.builtin.template:
-#	src: roboshop.conf
-#   dest: /etc/ngnix/default.d/roboshop.conf
+- name: copy robos#hop config file
+  ansible.builtin.template:
+	 src: roboshop.conf
+   dest: /etc/ngnix/default.d/roboshop.conf
 
 - name: Restart Ngnix Service
   ansible.builtin.systemd
