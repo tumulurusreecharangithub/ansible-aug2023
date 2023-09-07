@@ -5,8 +5,8 @@
   
 - name: remove old html content
   ansible.builtin.file:  
-    path:/usr/share/ngnix/html
-    state:absent
+    path: /usr/share/ngnix/html
+    state: absent
 
 - name: Download front end content and extract it
   ansible.builtin.unarchive:
