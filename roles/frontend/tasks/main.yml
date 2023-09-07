@@ -20,10 +20,10 @@
     dest: /usr/share/nginx/html
     remote_src: yes
  
-# - name: copy robos#hop config file
-#   ansible.builtin.template:
-# 	 src: roboshop.conf
-#    dest: /etc/nginx/default.d/roboshop.conf
+- name: copy robos#hop config file
+  ansible.builtin.copy:
+	 src: roboshop.conf
+   dest: /etc/nginx/default.d/roboshop.conf
 
 - name: Restart Ngnix Service
   ansible.builtin.systemd:
