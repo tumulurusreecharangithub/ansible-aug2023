@@ -1,1 +1,2 @@
-xxxxxxxxxxxxx
+- name: Setup Hostname
+  ansible.bulitin.shell: set-hostname {{COMPONENT}}
