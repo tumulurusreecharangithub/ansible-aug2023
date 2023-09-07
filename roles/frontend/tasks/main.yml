@@ -3,7 +3,7 @@
     name: nginx
     state: installed
   
-- name: remove html content
+- name: remove old html content
   ansible.builtin.file:  
     path:/usr/share/ngnix/html
     state:absent
@@ -20,15 +20,15 @@
     dest: /usr/share/ngnix/html
     remote_src: yes
  
-- name: copy robos#hop config file
-  ansible.builtin.template:
-	 src: roboshop.conf
-   dest: /etc/ngnix/default.d/roboshop.conf
+# - name: copy robos#hop config file
+#   ansible.builtin.template:
+# 	 src: roboshop.conf
+#    dest: /etc/ngnix/default.d/roboshop.conf
 
-- name: Restart Ngnix Service
-  ansible.builtin.systemd
-    state: restarted
-    name: ngnix
+# - name: Restart Ngnix Service
+#   ansible.builtin.systemd
+#     state: restarted
+#     name: ngnix
  
  
   

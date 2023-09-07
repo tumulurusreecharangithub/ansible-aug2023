@@ -4,3 +4,17 @@ frontend-dev.roboshop.internal
 cart-dev.roboshop.internal
 [CATALOGUE]
 catalogue-dev.roboshop.internal
+[PAYMENT]
+payment-dev.roboshop.internal
+[SHIPPING]
+shipping-dev.roboshop.internal
+[USER]
+user-dev.roboshop.internal
+[RABBITMQ]
+rabbitmq-dev.roboshop.internal
+[REDIS]
+redis-dev.roboshop.internal
+[MONGODB]
+mongodb-dev.roboshop.internal
+[MYSQL]
+mysql-dev.roboshop.internal
