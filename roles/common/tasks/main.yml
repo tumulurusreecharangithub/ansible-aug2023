@@ -3,4 +3,4 @@
 
 - name: Install ansible General
   ansible.builtin.shell: ansible-galaxy collection install community.general
-  when: APP_TYPE== "nodejs"
+  when: APP_TYPE == "nodejs"
