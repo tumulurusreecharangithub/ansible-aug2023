@@ -1,0 +1,33 @@
+
+- name: Setup NodeJs Repos
+  ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x| bash
+
+- name: Install NodeJs
+  ansible.builtin.yum:
+    name: roboshop
+    state: installed
+  
+- name: Add Roboshop App User
+  ansible.builtin.user:
+    name: roboshop
+    comment: Roboshop Application User
+
+- name: Remove old App content
+  ansible.builtin.file:
+    path: /home/roboshop/catalogue
+    state: absent
+
+- name: Download cataougue content & Extract-it
+  ansible.builtin.unarchive:
+    src:src: "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
+    dest: /tmp
+    remote_src: yes
+
+- name: Copy Catalogue content
+  ansible.builtin.copy:
+    src: /tmp/catalogue-main/
+    dest: /home/roboshop/catalogue
+    remote_src: yes
+  become_user:  roboshop
+
+

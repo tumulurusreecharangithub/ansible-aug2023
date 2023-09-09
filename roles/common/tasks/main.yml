@@ -1,2 +1,6 @@
 - name: Setup hostname
   ansible.builtin.shell: set-hostname {{COMPONENT}}
+
+- name: Install ansible General
+  ansible.builtin.shell: community.general.ansible_galaxy_install
+  when: APP_TYPE==nodejs
