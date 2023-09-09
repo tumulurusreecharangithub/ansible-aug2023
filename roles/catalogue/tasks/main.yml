@@ -1,10 +1,10 @@
 
 - name: Setup NodeJs Repos
-  ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x| bash
+  ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 
 - name: Install NodeJs
   ansible.builtin.yum:
-    name: roboshop
+    name: nodejs
     state: installed
   
 - name: Add Roboshop App User
