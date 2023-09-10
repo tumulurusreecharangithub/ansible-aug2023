@@ -24,8 +24,7 @@
     state: absent
 
 - name: Download cataougue content & Extract-it
-  ansible.builtin.unarchive:
-   # src:  "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
+  ansible.builtin.unarchive:   
     src: "https//github.com/roboshop-devops-project/catalogue/archive/main.zip"
     dest: /tmp
     remote_src: yes
@@ -35,6 +34,6 @@
     src: /tmp/catalogue-main/
     dest: /home/roboshop/catalogue
     remote_src: yes
-  become_user:  roboshop
+  become_user: roboshop
 
 
