@@ -2,10 +2,10 @@
 - name: Setup NodeJs Repos
   
   # Centos7
-  ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_16.x | bash
+  # ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_16.x | bash
 
   # Centos8
-  # ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
+  ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
 
 
 - name: Install NodeJs
