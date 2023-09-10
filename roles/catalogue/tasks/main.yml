@@ -2,7 +2,7 @@
 - name: Setup NodeJs Repos
   
   # Centos7
-  # ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_16.x | sudo bash
+  # ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_16.x | bash
 
   # Centos8
   ansible.builtin.shell: curl -sL https://rpm.nodesource.com/setup_lts.x | bash
@@ -25,7 +25,7 @@
 
 - name: Download cataougue content & Extract-it
   ansible.builtin.unarchive:
-    src:src: "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
+    src:  "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
     dest: /tmp
     remote_src: yes
 
