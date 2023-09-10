@@ -25,7 +25,8 @@
 
 - name: Download cataougue content & Extract-it
   ansible.builtin.unarchive:
-    src:  "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
+   # src:  "https://github.com/roboshop-devops-project/catalogue/archive/main.zip"
+    src: "https//github.com/roboshop-devops-project/catalogue/archive/main.zip"
     dest: /tmp
     remote_src: yes
 
